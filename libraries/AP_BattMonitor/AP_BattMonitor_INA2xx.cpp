@@ -113,8 +113,6 @@ bool AP_BattMonitor_INA2XX::configure(DevType dtype)
 
     case DevType::INA226: {
         // configure for MAX_AMPS
-        //Test with max_amps=1
-        max_amps=1.0;
         const uint16_t conf = (0x2<<9) | (0x5<<6) | (0x5<<3) | 0x7; // 2ms conv time, 16x sampling
         const float rShunt = 0.1; //Ohms
         current_LSB = max_amps / 32768.0;
